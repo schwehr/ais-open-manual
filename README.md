@@ -4,7 +4,7 @@ https://img.shields.io/badge/status-draft-orange
 
 [I am actively writing this book]
 
-The maritime Automatic Identification System (AIS), originally established in
+The maritime **Automatic Identification System (AIS)**, originally established in
 the 1990s as a tool for situational awareness for ship bridge crews, has
 transformed into a complex global ecosystem. Over the last three decades, its
 scope has expanded to encompass sophisticated vessel hardware, radio frequency
