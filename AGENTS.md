@@ -65,10 +65,6 @@ ignore it (or delete it) rather than editing it.
   anything unconfirmed `(verify)`. Cite accident findings only to the official
   investigation report. Both drafts were machine-written; verify before
   promoting any claim into `book/`.
-- **Security content is detection/defence-only.** No AIS transmit
-  instructions, spoofing recipes or exploit code. In `fable-5.1/code/`,
-  `rf/gmsk_demo.py` writes baseband to a file only and must never gain an SDR
-  transmit path; `tdma/sotdma_sim.py` is slot bookkeeping only.
 - **Licensing.** Prose, figures, tables → CC BY 4.0. Code in `fable-5.1/code/`
   → Apache-2.0 (see `fable-5.1/LICENSE`). New data files need a provenance
   entry (`fable-5.1/data/samples/PROVENANCE.md` pattern); imported figures must
