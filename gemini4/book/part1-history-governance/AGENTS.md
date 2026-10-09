@@ -1,0 +1,32 @@
+# `book/part1-history-governance` — Directory Guide for Agents
+
+## Overview
+This directory contains Part I (*History, Governance, Standards, and Legal Framework*, Chapters 1–4) of *Automatic Identification System (AIS): The Open Manual*. It covers the operational taxonomy of AIS applications, the historical evolution of maritime navigation and TDMA radio protocols, the international regulatory and patent architecture governing AIS, and the forensic/legal use of AIS in admiralty litigation, casualty investigations, and sanctions enforcement.
+
+## Subdirectories
+None. This is a leaf directory under `book/`.
+
+## Files in This Directory
+
+- **`ch01-introduction-and-uses.md`**
+  - Introduces the three original IMO/ITU pillars of AIS (Ship-to-Ship collision avoidance supplementing ARPA radar, Littoral State hazardous cargo monitoring, and Vessel Traffic Services) alongside the `schwehr/gis-history` co-evolution of AIS and open-source GIS (`noaadata`, `Blender`, `libais`, `MovingPandas`).
+  - Provides a comprehensive taxonomy and mathematical treatment of modern AIS applications across 12 domains: Search and Rescue (`AIS-SART`, `AIS-MOB`, `EPIRB-AIS`, Message 9, USCG `SAROPS`), Physical/Synthetic/Virtual Aids to Navigation (AtoNs) & AMRD Group A/B, complex marine operations & subsea cable anchor-drag protection, the 2010 *Deepwater Horizon* disaster response, marine mammal protection (*Whale Alert* & Vanderlaan-Taggart speed-lethality logistic curve), Global Fishing Watch & SAR dark-vessel fusion, atmospheric (`STEAM` cubic propulsion law) & underwater radiated noise (`JOMOPANS-ECHO`) modeling, NOAA PORTS & VHF atmospheric ducting inversion, commodity trade finance (`BMAP` draught-to-cargo mass via $\Delta d \times \text{TPC}$), admiralty litigation & Blender (`bpy`) 3D scene reconstruction, and national security/Encrypted AIS (EAIS).
+  - Derives 2D ENU Closest Point of Approach ($D_{\text{CPA}}, T_{\text{CPA}}$) with GNSS antenna offset corrections and includes a runnable multi-domain Python analytics walkthrough.
+
+- **`ch02-history-of-navigation-and-ais.md`**
+  - Traces the engineering history of maritime positioning from ancient dead reckoning and John Harrison's H4 chronometer (1761) through the *RMS Titanic* disaster (1912), WWII hyperbolic TDOA chains (Gee, Decca, LORAN-A/C, CHAYKA), atomic clocks and UTC (1972), GPS/GLONASS, NMEA 0183 (1983), and WGS84 (1984).
+  - Examines the March 24, 1989 *Exxon Valdez* grounding in Prince William Sound, explaining the physical radar line-of-sight and target-swapping limitations of Valdez VTS and how the US Oil Pollution Act of 1990 (OPA-90) catalyzed automated dependent surveillance.
+  - Compares the three competing 1990s tracking architectures—the UK/French Dover Strait "4S" VHF DSC polling system (ITU-R M.825), the Panama Canal UHF CTAN system, and Håkan Lans's Swedish/Finnish Baltic SOTDMA prototype—and proves mathematically why DSC polling collapses under multi-slot contention while 2,250-slot dual-channel SOTDMA scales to dense maritime straits.
+  - Covers the 1998 adoption of ITU-R M.1371-0, the May 2000 removal of GPS Selective Availability, the December 2000 IMO SOLAS Chapter V Regulation 19 mandate, the post-9/11 pivot to MTSA 2002 / USCG NAIS, and includes a discrete-event Python simulation comparing DSC polling vs. SOTDMA channel throughput.
+
+- **`ch03-governance-standards-and-patents.md`**
+  - Maps the multi-layered international governance polyarchy regulating AIS: UNCLOS (maritime zones from Internal Waters and the $12\text{ NM}$ Territorial Sea to the $200\text{ NM}$ EEZ and High Seas), IMO (SOLAS Ch. V Reg 19 & 19-1 LRIT, COLREGs Rules 5/7/8, STCW, Res. A.1106(29), Res. A.1192(33)), ITU-R (RR App. 18, M.1371-5, M.585-9, M.2092-1, M.2135-0), IALA (including its August 22, 2024 transition from NGO to Intergovernmental Organization and Recs. A-124/A-126/V-128), IHO (S-52/S-57/S-100), IEC TC 80, RTCM, NMEA, CCNR/CESNI, USCG (`33 CFR § 164.46`), and FCC (`47 CFR Part 80`).
+  - Details the SOLAS Gross Tonnage formula ($GT = K_1 V$), multi-regime AIS carriage thresholds, and the strict four-part legal test under IMO Resolution A.1106(29) §§ 21–22 for a Master's discretionary AIS switch-off.
+  - Documents the complete intellectual property history of Håkan Lans's first-generation STDMA patents (`SE 8803164`, `EP 0 465 532 B1`, and `US 5,506,587`—including the USPTO's March 30, 2010 Ex Parte Reexamination Certificate cancelling all 19 claims) alongside second-generation Satellite AIS (S-AIS) de-collision and successive interference cancellation (SIC) patents (`US 7,839,336`, `US 8,218,670`, `US 8,761,775`, `US 9,112,590`).
+  - Provides a runnable Python regulatory audit engine (`validate_imo_number`, `classify_mmsi`, `evaluate_ais_carriage_mandates`, `audit_unclos_and_a1106_dark_event`).
+
+- **`ch04-legal-cases-casualties-and-privacy.md`**
+  - Establishes the mathematical framework for 3D admiralty casualty forensics: local East-North-Up (ENU) projection to eliminate IEEE 754 `float32` vertex jitter in Blender (`bpy`), rigid-body lever-arm transformation from the GNSS antenna reference point $(A, B, C, D)$ to the geometric hull center and bow/stern extremities ($\mathbf{v}_p = \mathbf{v}_G + \boldsymbol{\omega} \times \mathbf{r}_p$), crabbing/leeway angle ($\beta = \chi - \psi$), swept channel path width, COLREGs Annex I navigation light sector cones, and SOLAS Reg V/22 bridge blind-sector raycasting.
+  - Analyzes landmark admiralty litigation and procedural reforms: *Alexandra 1 v Ever Smart* (`[2021] UKSC 6`), *Sakizaya Kalon v Panamax Alexander* (`[2020] EWHC 2604`), the April 2023 UK Civil Procedure Rules Part 61 (`PD 61 § 4.2`) mandatory 21-day early disclosure of electronic track data, and *MV Hua Sheng Hai v MV Kirrixki* (`[2024]`).
+  - Presents forensic engineering case studies of the *Ever Given* Suez Canal grounding (March 2021), the *MV Dali* Francis Scott Key Bridge collapse (March 2024, contrasting VDR, Pilot Plug PPU, and shore NAIS redundancy during dual electrical blackouts), and US DOJ sanctions forfeitures (*M/V Wise Honest*, *Grace 1*).
+  - Examines national radio interception and data-privacy laws (US `47 U.S.C. § 605(a)` public-safety exception vs. UK Wireless Telegraphy Act 2006 s. 48, EU GDPR on owner-operated vessels, and China's November 2021 DSL/PIPL terrestrial AIS feed restrictions) and concludes with a complete Python/Blender (`bpy`) 3D casualty reconstruction script.
