@@ -1,0 +1,11 @@
+pyais>=2.5
+libais
+pandas
+geopandas
+movingpandas
+duckdb
+numpy
+shapely
+pytest
+matplotlib
+pyarrow
