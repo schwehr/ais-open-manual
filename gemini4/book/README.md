@@ -138,3 +138,4 @@
 * **[Appendix F: Landmark Admiralty Court Cases, Statutes, and AIS Patent Index](appendices/appendix-f-court-cases-statutes-and-patents.md)**
 * **[Appendix G: Recommended Low-Budget Home AIS Station BOM, Schematics, and Configs](appendices/appendix-g-home-ais-station-bom-and-configs.md)**
 * **[Appendix H: Master Bibliography and Verified Citation Index](appendices/appendix-h-master-bibliography.md)**
+* **[Appendix I: Malicious AIS Activity and Adversarial Abuse](appendices/appendix-i-malicious-ais-activity.md)**

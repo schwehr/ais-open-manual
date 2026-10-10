@@ -36,7 +36,7 @@ class TestBookIntegrity(unittest.TestCase):
             self.assertTrue(target.exists(), f"Broken link in book/README.md: {link} -> {target}")
             self.assertGreater(target.stat().st_size, 1000, f"File too small: {target}")
 
-    def test_all_40_chapters_and_8_appendices_exist_and_substantial(self) -> None:
+    def test_all_40_chapters_and_9_appendices_exist_and_substantial(self) -> None:
         chapters = sorted((ROOT_DIR / "book").glob("part*/ch*.md"))
         self.assertEqual(len(chapters), 40, f"Expected 40 chapters, found {len(chapters)}")
         for ch in chapters:
@@ -50,7 +50,7 @@ class TestBookIntegrity(unittest.TestCase):
             self.assertIn("```", content, f"Chapter {ch.name} must contain code/diagram blocks")
 
         appendices = sorted((ROOT_DIR / "book" / "appendices").glob("appendix-*.md"))
-        self.assertEqual(len(appendices), 8, f"Expected 8 appendices, found {len(appendices)}")
+        self.assertEqual(len(appendices), 9, f"Expected 9 appendices, found {len(appendices)}")
         for app in appendices:
             content = app.read_text(encoding="utf-8")
             self.assertGreater(len(content), 10000, f"Appendix {app.name} is too short")

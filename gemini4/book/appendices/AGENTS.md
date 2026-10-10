@@ -53,3 +53,7 @@ None. This is a leaf directory under `book/`.
 
 - **`appendix-h-master-bibliography.md`**
   - Annotated master bibliography index organized across 8 thematic sections (H.1 through H.8), cross-referencing every BibTeX key in the root `MASTER_BIBLIOGRAPHY.bib` file to its full formatted citation, DOI/URL, and the specific book chapters where it is cited.
+
+- **`appendix-i-malicious-ais-activity.md`**
+  - Details adversarial abuse of AIS: spoofing (transmitting false ships, location manipulation), identity masking (MMSI changing), steganography (hiding data in AIS payloads), software crashing/DoS, tricking direction finding systems, pirate evasion, and tracking blueforce ships.
+  - Includes a code walkthrough of encoding covert messages in AIS position payloads.
